@@ -57,10 +57,6 @@ a:hover {
   text-shadow: 1px 1px #83898f;
 }
 
-.margina {
-  margin-top: 300px;
-}
-
 /***nav***/
 .fixed-nav nav {
   position: fixed;
@@ -71,6 +67,11 @@ a:hover {
 }
 .fixed-nav nav .logo {
   display: block;
+}
+@media (max-width: 768px) {
+  .fixed-nav nav .logo {
+    font-size: 1.1rem;
+  }
 }
 
 nav {
@@ -102,6 +103,12 @@ nav ul a {
   font-family: "Kalam", cursive;
   font-size: 1.3rem;
 }
+@media (max-width: 768px) {
+  nav ul a {
+    margin: 10px;
+    font-size: 1rem;
+  }
+}
 nav ul a:hover {
   color: #83898f;
 }
@@ -114,6 +121,11 @@ header {
   background-size: cover;
   display: flex;
   align-items: center;
+}
+@media (max-width: 768px) {
+  header {
+    height: 60vh;
+  }
 }
 header .container {
   opacity: 0.7;
@@ -159,6 +171,11 @@ header .container button:hover {
   font-weight: 400;
   color: #454b51;
 }
+@media (max-width: 768px) {
+  #interests h2 {
+    font-size: 3.5rem;
+  }
+}
 #interests h2::after {
   display: block;
   content: "";
@@ -166,6 +183,11 @@ header .container button:hover {
   height: 10px;
   width: 150px;
   margin: 0 auto 50px auto;
+}
+@media (max-width: 768px) {
+  #interests h2::after {
+    width: 80px;
+  }
 }
 #interests .container {
   display: flex;
@@ -175,6 +197,11 @@ header .container button:hover {
   flex: 0 0 32%;
   border: 1px solid #e4e4e4;
   position: relative;
+}
+@media (max-width: 768px) {
+  #interests .container article {
+    flex: 0 0 100%;
+  }
 }
 #interests .container article img {
   width: 100%;
@@ -213,7 +240,12 @@ header .container button:hover {
   font-family: "Kalam", cursive;
   font-size: 5rem;
   font-weight: 400;
-  color: #fff;
+  color: #454b51;
+}
+@media (max-width: 768px) {
+  #skills h2 {
+    font-size: 3.5rem;
+  }
 }
 #skills h2::after {
   display: block;
@@ -223,6 +255,14 @@ header .container button:hover {
   width: 150px;
   margin: 0 auto 50px auto;
 }
+@media (max-width: 768px) {
+  #skills h2::after {
+    width: 80px;
+  }
+}
+#skills h2 {
+  color: #fff;
+}
 #skills .container {
   display: flex;
   justify-content: space-between;
@@ -230,15 +270,30 @@ header .container button:hover {
 #skills .container article {
   flex: 0 0 32%;
 }
+@media (max-width: 768px) {
+  #skills .container article {
+    flex: 0 0 100%;
+  }
+}
 #skills .container article i {
   color: #dd3116;
   font-size: 4.5rem;
+}
+@media (max-width: 768px) {
+  #skills .container article i {
+    font-size: 2.5rem;
+  }
 }
 #skills .container article h3 {
   font-size: 2.5rem;
   font-weight: 700;
   color: #fff;
   margin-top: 20px;
+}
+@media (max-width: 768px) {
+  #skills .container article h3 {
+    font-size: 1.3rem;
+  }
 }
 #skills .container article p {
   color: #fff;
@@ -258,6 +313,11 @@ header .container button:hover {
   font-weight: 400;
   color: #454b51;
 }
+@media (max-width: 768px) {
+  #portfolio h2 {
+    font-size: 3.5rem;
+  }
+}
 #portfolio h2::after {
   display: block;
   content: "";
@@ -265,6 +325,11 @@ header .container button:hover {
   height: 10px;
   width: 150px;
   margin: 0 auto 50px auto;
+}
+@media (max-width: 768px) {
+  #portfolio h2::after {
+    width: 80px;
+  }
 }
 #portfolio .container {
   display: flex;
@@ -288,15 +353,31 @@ footer h2 {
   font-family: "Kalam", cursive;
   font-size: 5rem;
   font-weight: 400;
-  color: #000;
+  color: #454b51;
+}
+@media (max-width: 768px) {
+  footer h2 {
+    font-size: 3.5rem;
+  }
 }
 footer h2::after {
   display: block;
   content: "";
-  background: #000;
+  background: #dd3116;
   height: 10px;
   width: 150px;
   margin: 0 auto 50px auto;
+}
+@media (max-width: 768px) {
+  footer h2::after {
+    width: 80px;
+  }
+}
+footer h2 {
+  color: #000;
+}
+footer h2::after {
+  background: #000;
 }
 footer i {
   font-size: 2.5rem;

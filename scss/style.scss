@@ -65,6 +65,30 @@ a {
     }
 }
 
+@mixin h2 {
+    h2 {
+        margin-top: 50px;
+        font-family: $fontFamily;
+        font-size: 5rem;
+        font-weight: 400;
+        color: $navyBlue;
+        @media(max-width: 768px) {
+            font-size: 3.5rem;
+        }
+        &::after {
+            display: block;
+            content: '';
+            background: $orange;
+            height: 10px;
+            width: 150px;
+            margin: 0 auto 50px auto;
+            @media(max-width: 768px) {
+                width: 80px;
+            }
+        }
+    }
+}
+
 .header1 {
     background: $navyBlue;
     background-image: url(../img/header1.png);
@@ -88,10 +112,6 @@ a {
     }
 }
 
-.margina {
-    margin-top: 300px;
-}
-
 
 /***nav***/
 
@@ -103,6 +123,10 @@ a {
     z-index: 1;
     .logo {
         display: block;
+        @media(max-width: 768px) {
+            // display: none;
+            font-size: 1.1rem;
+        }
     }
 }
 
@@ -132,6 +156,10 @@ nav {
             color: $orange;
             font-family: $fontFamily;
             font-size: 1.3rem;
+            @media(max-width: 768px) {
+                margin: 10px;
+                font-size: 1rem;
+            }
             &:hover {
                 color: $grey;
             }
@@ -149,6 +177,9 @@ header {
     background-size: cover;
     display: flex;
     align-items: center;
+    @media(max-width: 768px) {
+        height: 60vh;
+    }
     .container {
         opacity: .7;
         border: 3px solid $navyBlue;
@@ -175,21 +206,7 @@ header {
 
 #interests {
     text-align: center;
-    h2 {
-        margin-top: 50px;
-        font-family: $fontFamily;
-        font-size: 5rem;
-        font-weight: 400;
-        color: $navyBlue;
-        &::after {
-            display: block;
-            content: '';
-            background: $orange;
-            height: 10px;
-            width: 150px;
-            margin: 0 auto 50px auto;
-        }
-    }
+    @include h2;
     .container {
         display: flex;
         justify-content: space-between;
@@ -197,6 +214,9 @@ header {
             flex: 0 0 32%;
             border: 1px solid $lightGrey;
             position: relative;
+            @media(max-width: 768px) {
+                flex: 0 0 100%;
+            }
             img {
                 width: 100%;
             }
@@ -233,35 +253,33 @@ header {
 #skills {
     text-align: center;
     background: $black;
+    @include h2;
     h2 {
-        margin-top: 50px;
-        font-family: $fontFamily;
-        font-size: 5rem;
-        font-weight: 400;
         color: $white;
-        &::after {
-            display: block;
-            content: '';
-            background: $orange;
-            height: 10px;
-            width: 150px;
-            margin: 0 auto 50px auto;
-        }
     }
     .container {
         display: flex;
         justify-content: space-between;
         article {
             flex: 0 0 32%;
+            @media(max-width: 768px) {
+                flex: 0 0 100%;
+            }
             i {
                 color: $orange;
-                font-size: 4.5rem
+                font-size: 4.5rem;
+                @media(max-width: 768px) {
+                    font-size: 2.5rem;
+                }
             }
             h3 {
                 font-size: 2.5rem;
                 font-weight: 700;
                 color: $white;
                 margin-top: 20px;
+                @media(max-width: 768px) {
+                    font-size: 1.3rem;
+                }
             }
             p {
                 color: $white;
@@ -278,21 +296,7 @@ header {
 
 #portfolio {
     text-align: center;
-    h2 {
-        margin-top: 50px;
-        font-family: $fontFamily;
-        font-size: 5rem;
-        font-weight: 400;
-        color: $navyBlue;
-        &::after {
-            display: block;
-            content: '';
-            background: $orange;
-            height: 10px;
-            width: 150px;
-            margin: 0 auto 50px auto;
-        }
-    }
+    @include h2;
     .container {
         display: flex;
         article {
@@ -312,19 +316,11 @@ footer {
     background: $orange;
     padding-bottom: 20px;
     text-align: center;
+    @include h2;
     h2 {
-        margin-top: 50px;
-        font-family: $fontFamily;
-        font-size: 5rem;
-        font-weight: 400;
         color: $black;
         &::after {
-            display: block;
-            content: '';
             background: $black;
-            height: 10px;
-            width: 150px;
-            margin: 0 auto 50px auto;
         }
     }
     i {
