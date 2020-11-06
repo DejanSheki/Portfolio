@@ -1,0 +1,343 @@
+@import url("https://fonts.googleapis.com/css?family=Kalam:400,700|Open+Sans:300,400,600");
+$fontFamily: "Kalam",
+cursive;
+$fontSize: 16px;
+$navyBlue: #454b51;
+$blue: #00519d;
+// $orange: #ff5e1e;
+$orange: #dd3116;
+$grey: #83898f;
+$lightGrey: #e4e4e4;
+$white: #fff;
+$black: #000;
+$transition: .5s ease;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: $fontSize;
+    line-height: 1.6;
+}
+
+.container {
+    margin: 20px;
+    flex-wrap: wrap;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: $fontFamily;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    &:hover {
+        transition: $transition;
+    }
+}
+
+@mixin btn {
+    background: $orange;
+    color: $white;
+    padding: 10px 50px;
+    font-family: $fontFamily;
+    border: none;
+    box-shadow: 2px 2px 0 $blue;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-top: 20px;
+    cursor: pointer;
+    &:hover {
+        color: $blue;
+        // border: 1px solid $blue;
+        box-shadow: -2px -2px 0 $blue;
+    }
+}
+
+.header1 {
+    background: $navyBlue;
+    background-image: url(../img/header1.png);
+    height: 50vh;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    .portfolio {
+        background: linear-gradient(rgba(69, 75, 81, .5), rgba(69, 75, 81, .5));
+        padding: 100px;
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        // opacity: .5;
+        h1 {
+            color: $orange;
+            font-size: 2.6rem;
+            font-weight: 400;
+            text-shadow: 1px 1px $grey;
+        }
+    }
+}
+
+.margina {
+    margin-top: 300px;
+}
+
+
+/***nav***/
+
+.fixed-nav nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    .logo {
+        display: block;
+    }
+}
+
+nav {
+    display: flex;
+    position: relative;
+    background: $navyBlue;
+    padding: 10px 20px;
+    .logo {
+        color: $blue;
+        font-family: $fontFamily;
+        font-size: 2.6rem;
+        font-weight: 400;
+        text-shadow: 1px 1px $grey;
+        display: none;
+        &:hover {
+            text-shadow: 2px 2px $grey;
+            transition: $transition;
+        }
+    }
+    ul {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        a {
+            margin-left: 25px;
+            color: $orange;
+            font-family: $fontFamily;
+            font-size: 1.3rem;
+            &:hover {
+                color: $grey;
+            }
+        }
+    }
+}
+
+
+/***header***/
+
+header {
+    background-image: linear-gradient(rgba(255, 255, 255, .2), rgba(255, 255, 255, .2)), url(../img/header.jpg);
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    .container {
+        opacity: .7;
+        border: 3px solid $navyBlue;
+        background: linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7));
+        flex: 0 0 50%;
+        text-align: center;
+        padding: 15px;
+        h1 {
+            font-size: 3rem;
+            color: $orange;
+        }
+        h2,
+        p {
+            color: $navyBlue;
+        }
+        button {
+            @include btn;
+        }
+    }
+}
+
+
+/***interests***/
+
+#interests {
+    text-align: center;
+    h2 {
+        margin-top: 50px;
+        font-family: $fontFamily;
+        font-size: 5rem;
+        font-weight: 400;
+        color: $navyBlue;
+        &::after {
+            display: block;
+            content: '';
+            background: $orange;
+            height: 10px;
+            width: 150px;
+            margin: 0 auto 50px auto;
+        }
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        article {
+            flex: 0 0 32%;
+            border: 1px solid $lightGrey;
+            position: relative;
+            img {
+                width: 100%;
+            }
+            .corner {
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: $orange;
+                opacity: .8;
+                padding: 10px;
+                font-weight: 700;
+            }
+            h2 {
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-top: 5px;
+                &::after {
+                    height: 5px;
+                    width: 50px;
+                    margin-top: 15px;
+                }
+            }
+            p {
+                color: $navyBlue;
+                margin: 30px;
+            }
+        }
+    }
+}
+
+
+/*** skills***/
+
+#skills {
+    text-align: center;
+    background: $black;
+    h2 {
+        margin-top: 50px;
+        font-family: $fontFamily;
+        font-size: 5rem;
+        font-weight: 400;
+        color: $white;
+        &::after {
+            display: block;
+            content: '';
+            background: $orange;
+            height: 10px;
+            width: 150px;
+            margin: 0 auto 50px auto;
+        }
+    }
+    .container {
+        display: flex;
+        justify-content: space-between;
+        article {
+            flex: 0 0 32%;
+            i {
+                color: $orange;
+                font-size: 4.5rem
+            }
+            h3 {
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: $white;
+                margin-top: 20px;
+            }
+            p {
+                color: $white;
+                font-weight: 400;
+                font-size: 1.1rem;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+
+/*** portfolio ***/
+
+#portfolio {
+    text-align: center;
+    h2 {
+        margin-top: 50px;
+        font-family: $fontFamily;
+        font-size: 5rem;
+        font-weight: 400;
+        color: $navyBlue;
+        &::after {
+            display: block;
+            content: '';
+            background: $orange;
+            height: 10px;
+            width: 150px;
+            margin: 0 auto 50px auto;
+        }
+    }
+    .container {
+        display: flex;
+        article {
+            flex: 0 0 50%;
+            img {
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+}
+
+
+/***contact***/
+
+footer {
+    background: $orange;
+    padding-bottom: 20px;
+    text-align: center;
+    h2 {
+        margin-top: 50px;
+        font-family: $fontFamily;
+        font-size: 5rem;
+        font-weight: 400;
+        color: $black;
+        &::after {
+            display: block;
+            content: '';
+            background: $black;
+            height: 10px;
+            width: 150px;
+            margin: 0 auto 50px auto;
+        }
+    }
+    i {
+        font-size: 2.5rem;
+        color: $black;
+        margin: 0 15px 20px 15px;
+        cursor: pointer;
+        &:hover {
+            color: $navyBlue;
+        }
+    }
+    p {
+        font-family: $fontFamily;
+        font-weight: 700;
+    }
+}
