@@ -7,6 +7,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -65,6 +66,11 @@ a:hover {
   left: 0;
   z-index: 1;
 }
+@media (max-width: 768px) {
+  .fixed-nav nav {
+    justify-content: space-between;
+  }
+}
 .fixed-nav nav .logo {
   display: block;
 }
@@ -97,6 +103,11 @@ nav ul {
   align-items: center;
   list-style: none;
 }
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+  }
+}
 nav ul a {
   margin-left: 25px;
   color: #dd3116;
@@ -111,6 +122,59 @@ nav ul a {
 }
 nav ul a:hover {
   color: #83898f;
+}
+nav .bars {
+  display: none;
+}
+@media (max-width: 768px) {
+  nav .bars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+  }
+}
+nav .bars .bar {
+  width: 25px;
+  height: 3px;
+  background: #dd3116;
+  margin: 3px;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+nav .bars-open .bar:nth-child(1) {
+  transition: transform 0.2s ease-in-out;
+  transform: rotate(45deg) translate(6.5px, 6px);
+}
+nav .bars-open .bar:nth-child(2) {
+  opacity: 0;
+}
+nav .bars-open .bar:nth-child(3) {
+  transition: transform 0.2s ease-in-out;
+  transform: rotate(-45deg) translate(6.5px, -6.5px);
+}
+@media (max-width: 768px) {
+  nav .nav-menu {
+    display: none;
+    background: #454b51;
+    position: absolute;
+    top: 47px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  nav .nav-menu a {
+    color: #fff;
+  }
+  nav .nav-menu a:hover {
+    color: #dd3116;
+    transition: 0.5s ease;
+  }
+}
+@media (min-width: 769px) {
+  nav .nav-menu {
+    display: flex !important;
+  }
 }
 
 /***header***/

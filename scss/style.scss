@@ -19,6 +19,7 @@ $transition: .5s ease;
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 body {
@@ -121,6 +122,9 @@ a {
     top: 0;
     left: 0;
     z-index: 1;
+    @media(max-width: 768px) {
+        justify-content: space-between;
+    }
     .logo {
         display: block;
         @media(max-width: 768px) {
@@ -151,6 +155,9 @@ nav {
         display: flex;
         align-items: center;
         list-style: none;
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
         a {
             margin-left: 25px;
             color: $orange;
@@ -163,6 +170,57 @@ nav {
             &:hover {
                 color: $grey;
             }
+        }
+    }
+    .bars {
+        display: none;
+        @media (max-width: 768px) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .bar {
+            width: 25px;
+            height: 3px;
+            background: $orange;
+            margin: 3px;
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+    }
+    .bars-open {
+        .bar:nth-child(1) {
+            transition: transform .2s ease-in-out;
+            transform: rotate(45deg) translate(6.5px, 6px);
+        }
+        .bar:nth-child(2) {
+            opacity: 0;
+        }
+        .bar:nth-child(3) {
+            transition: transform .2s ease-in-out;
+            transform: rotate(-45deg) translate( 6.5px, -6.5px);
+        }
+    }
+    .nav-menu {
+        @media (max-width: 768px) {
+            display: none;
+            background: $navyBlue;
+            position: absolute;
+            top: 47px;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            a {
+                color: $white;
+                &:hover {
+                    color: $orange;
+                    transition: $transition;
+                }
+            }
+        }
+        @media (min-width:769px) {
+            display: flex !important;
         }
     }
 }
